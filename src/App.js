@@ -8,6 +8,9 @@ import Services from './components/UI/Services';
 import Portfolio from './components/UI/Portfolio';
 import Contact from './components/UI/Contact';
 //import VisitorCounter from './components/UI/VisitorCounter';
+import 'ldrs/helix'
+
+
 
 function App() {
   useEffect(()=>{
@@ -15,6 +18,7 @@ function App() {
   },[])
   return (
     <>
+    
     <Header/>
 <main>
 <Hero/>
@@ -32,3 +36,4 @@ function App() {
 
 
 export default App;
+

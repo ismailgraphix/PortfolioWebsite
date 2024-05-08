@@ -1,10 +1,10 @@
 import portfolioImg01 from "../images/portfolio-01.jpg";
 import portfolioImg02 from "../images/portfolio-02.jpg";
-import portfolioImg03 from "../images/portfolio-03.jpg";
+//import portfolioImg03 from "../images/portfolio-03.jpg";
 import portfolioImg04 from "../images/portfolio-04.jpg";
 import portfolioImg05 from "../images/portfolio-05.jpg";
-import portfolioImg06 from "../images/portfolio-06.jpg";
-import portfolioImg07 from "../images/portfolio-07.jpg";
+//import portfolioImg06 from "../images/portfolio-06.jpg";
+//import portfolioImg07 from "../images/portfolio-07.jpg";
 
 const portfolios = [
   {
@@ -15,7 +15,7 @@ const portfolios = [
     description:
       "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Praesentium vitae sunt magnam numquam esse ipsam? Quis qui enim, temporibus dignissimos atque repellendus amet a velit. Dolorem quidem animi doloribus saepe!",
     technologies: ["React", "Tailwind css", "Node.js", "MongoDB"],
-    siteUrl: "#",
+    siteUrl: "aikinyi-estate.onrender.com",
   },
   {
     id: "02",
@@ -47,7 +47,7 @@ const portfolios = [
     technologies: ["React", "Tailwind css", "Node.js", "MongoDB"],
     siteUrl: "#",
   },
-  {
+  /**{
     id: "05",
     imgUrl: portfolioImg03,
     category: "Web Design",
@@ -147,7 +147,7 @@ const portfolios = [
       "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Praesentium vitae sunt magnam numquam esse ipsam? Quis qui enim, temporibus dignissimos atque repellendus amet a velit. Dolorem quidem animi doloribus saepe!",
     technologies: ["React", "Tailwind css", "Node.js", "MongoDB"],
     siteUrl: "#",
-  },
+  },*/
 ];
 
 export default portfolios;
