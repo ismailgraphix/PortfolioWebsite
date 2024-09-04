@@ -28,8 +28,10 @@ const Hero = () => {
     </div>
     <p data-aos='fade-left' data-aos-duration='1500' className="flex gap-2 text-headingColor mt-12 font-[500] text-[15px] leading-7 sm:pl-14 sm:pr-10">
     <span><i class="ri-apps-2-line"></i></span>
-    Aikinyi Estate is the best place to find your next perfect place to live.
-    We have a wide range of properties for you to choose from.</p>
+    As a Frontend Web Developer, I specialize in creating engaging and responsive user interfaces that enhance the user experience. 
+    My expertise lies in using modern frameworks and technologies such as React.js and Next.js to build dynamic web applications. 
+    
+</p>
     <div className='flex items-center gap-9 mt-14'>
     <span className='text-smallTextColor text-[15px] font-[600]'>Follow me:</span>
     <span>

@@ -44,8 +44,8 @@ const Portfolio = () => {
 
     <div className='flex gap-3'>
     <button onClick={()=>setSelectTab('all')} className='text-smallTextColor border border-solid border-smallTextColor py-2 px-4 rounded-[8px]'>All</button>
-    <button onClick={()=>setSelectTab('web-design')} className='text-smallTextColor border border-solid border-smallTextColor py-2 px-4 rounded-[8px]'>Web Design</button>
-    <button onClick={()=>setSelectTab('ux-design')} className='text-smallTextColor border border-solid border-smallTextColor py-2 px-4 rounded-[8px]'>UI Design</button>
+    <button onClick={()=>setSelectTab('web-design')} className='text-smallTextColor border border-solid border-smallTextColor py-2 px-4 rounded-[8px]'>Frontend</button>
+    <button onClick={()=>setSelectTab('ux-design')} className='text-smallTextColor border border-solid border-smallTextColor py-2 px-4 rounded-[8px]'>Fullstack</button>
     </div>
     </div>
 
