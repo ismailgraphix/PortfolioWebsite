@@ -1,86 +1,126 @@
-import React,{useState,useEffect} from 'react'
-import data from '../../assets/data/portfolioData'
-import Modal from './Modal'
+"use client"
+
+import { useState, useEffect } from "react"
+import data from "../../assets/data/portfolioData"
+import Modal from "./Modal"
+
 const Portfolio = () => {
-    const [nextItems, setNextItems] = useState(6)
-    const [portfolios, setPortfolios] = useState(data)
-    const [selectTab, setSelectTab] = useState('all')
-    const [showModal,setShowModal] = useState(false)
-    const [activeID, setActiveID] = useState(null)
+  const [visibleItems, setVisibleItems] = useState(6)
+  const [portfolios, setPortfolios] = useState(data)
+  const [activeTab, setActiveTab] = useState("all")
+  const [showModal, setShowModal] = useState(false)
+  const [activeID, setActiveID] = useState(null)
 
-    const loadMoreHandler = ()=>{
-        setNextItems(prev => prev + 3 )
+  const filterCategories = {
+    all: "All",
+    "web-design": "Frontend",
+    "Fullstack": "Fullstack",
+  }
+
+  useEffect(() => {
+    if (activeTab === "all") {
+      setPortfolios(data)
+    } else {
+      const categoryMap = {
+        "web-design": "Web Design",
+        "Fullstack": "Fullstack",
+      }
+
+      const filteredData = data.filter((item) => item.category === categoryMap[activeTab])
+
+      setPortfolios(filteredData)
     }
 
-    const showModalHandler = id=>{
-        setShowModal(true)
-        setActiveID(id)
-    }
-    useEffect(()=>{
+    // Reset visible items when changing tabs
+    setVisibleItems(6)
+  }, [activeTab])
 
+  const loadMoreHandler = () => {
+    setVisibleItems((prev) => prev + 3)
+  }
 
-        if (selectTab==='all'){
-            setPortfolios(data)
-        }
+  const showModalHandler = (id) => {
+    setShowModal(true)
+    setActiveID(id)
+  }
 
-        if (selectTab==='web-design'){
-            const filteredData = data.filter(item=> item.category==='Web Design')
-            setPortfolios(filteredData)
-        }
-        if (selectTab==='ux-design'){
-            const filteredData = data.filter(item=> item.category==='Ux')
-            setPortfolios(filteredData)
-        }
+  const isAllItemsVisible = visibleItems >= portfolios.length
+  const hasMoreThanInitialItems = data.length > 6
 
-    },[selectTab])
   return (
-    <section id='portfolio'>
-    
-    <div className='container'>
-    <div className='flex items-center justify-between flex-wrap'>
-    <div className='mb-7 sm:mb-0'>
-    <h3 className='text-headingColor text-[2rem] font-[700]'>My Recent Projects</h3>
-    </div>
+    <section id="portfolio" className="py-16">
+      <div className="container mx-auto px-4">
+        <div className="flex items-center justify-between flex-wrap mb-8">
+          <div className="mb-7 sm:mb-0">
+            <h3 className="text-headingColor text-[2rem] font-[700]">My Recent Projects</h3>
+          </div>
 
-    <div className='flex gap-3'>
-    <button onClick={()=>setSelectTab('all')} className='text-smallTextColor border border-solid border-smallTextColor py-2 px-4 rounded-[8px]'>All</button>
-    <button onClick={()=>setSelectTab('web-design')} className='text-smallTextColor border border-solid border-smallTextColor py-2 px-4 rounded-[8px]'>Frontend</button>
-    <button onClick={()=>setSelectTab('ux-design')} className='text-smallTextColor border border-solid border-smallTextColor py-2 px-4 rounded-[8px]'>Fullstack</button>
-    </div>
-    </div>
+          <div className="flex gap-3 flex-wrap">
+            {Object.entries(filterCategories).map(([key, label]) => (
+              <button
+                key={key}
+                onClick={() => setActiveTab(key)}
+                className={`text-smallTextColor border border-solid border-smallTextColor py-2 px-4 rounded-[8px] transition-colors duration-300 ${
+                  activeTab === key ? "bg-smallTextColor text-white" : "hover:bg-smallTextColor hover:text-white"
+                }`}
+              >
+                {label}
+              </button>
+            ))}
+          </div>
+        </div>
 
+        {portfolios.length === 0 ? (
+          <div className="text-center py-10">
+            <p className="text-smallTextColor text-lg">No projects found in this category.</p>
+          </div>
+        ) : (
+          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
+            {portfolios.slice(0, visibleItems).map((portfolio, index) => (
+              <div
+                key={portfolio.id}
+                data-aos="fade-zoom-in"
+                data-aos-delay="50"
+                data-aos-duration="1000"
+                className="group relative z-[1] overflow-hidden rounded-[8px]"
+              >
+                <figure className="h-[220px] overflow-hidden">
+                  <img
+                    className="w-full h-full object-cover rounded-[8px] transition-transform duration-500 group-hover:scale-110"
+                    src={portfolio.imgUrl || "/placeholder.svg"}
+                    alt={portfolio.title}
+                  />
+                </figure>
 
-    <div className='flex items-center gap-4 flex-wrap'>
-    {
-        portfolios?.slice(0,nextItems)?.map((portfolio, index)=>(
-            <div key={index} data-aos='fade-zoom-in' data-aos-delay='50' data-aos-duration='1000' className='group max-w-full sm:w-[48.5%] md:w-[31.8%] lg:w-[32.2%] relative z-[1]'>
-            <figure>
-            <img className='rounded-[8px]' src={portfolio.imgUrl} alt=''/>
-            </figure>
+                <div className="w-full h-full bg-primaryColor bg-opacity-40 absolute top-0 left-0 z-[5] hidden group-hover:flex items-center justify-center transition-all duration-300">
+                  <button
+                    onClick={() => showModalHandler(portfolio.id)}
+                    className="text-white bg-headingColor hover:bg-smallTextColor py-2 px-4 rounded-[8px] font-[500] transition-colors duration-300"
+                  >
+                    See Details
+                  </button>
+                </div>
+              </div>
+            ))}
+          </div>
+        )}
 
-            <div className='w-full h-full bg-primaryColor bg-opacity-40 absolute top-0 left-0 z-[5] hidden group-hover:block'>
-            <div className='w-full h-full flex items-center justify-center'>
-            <button onClick={()=>showModalHandler(portfolio.id)} className='text-white bg-headingColor hover:bg-smallTextColor py-2 px-4 rounded-[8px] font-[500] ease-in duration-300'>see details</button>
-            </div>
-            </div>
-            </div>
-        ))
-    }
-    </div>
+        {!isAllItemsVisible && hasMoreThanInitialItems && (
+          <div className="text-center mt-8">
+            <button
+              onClick={loadMoreHandler}
+              className="text-white bg-headingColor hover:bg-smallTextColor py-2 px-4 rounded-[8px] font-[500] transition-colors duration-300"
+            >
+              Load More
+            </button>
+          </div>
+        )}
+      </div>
 
-    <div className='text-center mt-6'>
-    {
-        nextItems < portfolios.length && data.length > 6 &&  <button onClick={loadMoreHandler} className='text-white bg-headingColor hover:bg-smallTextColor py-2 px-4 rounded-[8px] font-[500] ease-in duration-300'>Load more</button>
-
-    }
-   
-    </div>
-    </div>
-    {
-        showModal && <Modal setShowModal={setShowModal} activeID={activeID}/>
-    }
+      {showModal && <Modal setShowModal={setShowModal} activeID={activeID} portfolios={portfolios} />}
     </section>
   )
 }
 
 export default Portfolio
+
