@@ -14,7 +14,7 @@ const Hero = () => {
      className='text-headingColor font-[600] text-[18px]'>Hello there</h5>
     <h1 data-aos='fade-up' data-aos-duration='1500' 
     className='text-headingColor font-[800] text-[1.8rem] sm:text-[40px]
-    leading-[30px] sm:leading-[46px] mt-5'> I'm Ismail Muhammad Adam <br/> Software developer </h1>
+    leading-[30px] sm:leading-[46px] mt-5'> I'm Ismail Muhammad Adam <br/> Software Developer </h1>
     <div data-aos='fade-up' data-aos-duration='1800' data-aos-delay='200'
      className=' flex items-center gap-6 mt-7'>
     <a href='#contact'>
@@ -28,8 +28,9 @@ const Hero = () => {
     </div>
     <p data-aos='fade-left' data-aos-duration='1500' className="flex gap-2 text-headingColor mt-12 font-[500] text-[15px] leading-7 sm:pl-14 sm:pr-10">
     <span><i class="ri-apps-2-line"></i></span>
-    As a Frontend Web Developer, I specialize in creating engaging and responsive user interfaces that enhance the user experience. 
-    My expertise lies in using modern frameworks and technologies such as React.js and Next.js to build dynamic web applications. 
+    As a passionate Software Developer, I specialize in creating innovative and scalable applications that solve real-world problems. 
+    My expertise spans full-stack development, from building responsive user interfaces to designing robust backend systems. 
+    I love turning complex problems into simple, beautiful, and intuitive solutions.
     
 </p>
     <div className='flex items-center gap-9 mt-14'>

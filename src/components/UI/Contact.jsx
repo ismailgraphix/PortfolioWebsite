@@ -7,14 +7,13 @@ const Contact = () => {
                 <h2 className='text-headingColor font-[700] text-[2.5rem] mb-8'>Get in touch</h2>
                 <div className='md:flex justify-between items-center'>
                     <div className='w-full md:w-1/2 h-[300px] sm:h-[450px]'>
-                        <iframe
-                            title='google-map'
-                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3939.7197810461466!2d7.515722410253526!3d9.089271790936857!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x104ddf862ad42923%3A0x764773dbfc7dc15e!2sAikinyi%20Limited!5e0!3m2!1sen!2sng!4v1715038647645!5m2!1sen!2sng"
-                            className='border-0 w-full h-full'
-                            allowFullScreen=""
-                            loading="lazy"
-                            referrerPolicy="no-referrer-when-downgrade">
-                        </iframe>
+                        <div className='w-full h-full bg-gray-100 flex items-center justify-center'>
+                            <div className='text-center'>
+                                <i className='ri-map-pin-line text-4xl text-primaryColor mb-4'></i>
+                                <p className='text-headingColor font-[500]'>Available for remote work worldwide</p>
+                                <p className='text-smallTextColor text-sm mt-2'>Let's discuss your project!</p>
+                            </div>
+                        </div>
                     </div>
 
                     <div className='w-full mt-8 md:mt-0 md:w-1/2 sm:h-[450px] lg:flex items-center bg-indigo-100 px-4 lg:px-8 py-8'>

@@ -9,7 +9,7 @@ const Footer = () => {
     <div className='container'>
     <div className='sm:flex items-center justify-between md:gap-8'>
     <div className='w-full sm:w-1/2'>
-    <h2 className='text-[26px] leading-10 text-white font-[600] mb-5 md:text-[2rem]'>Do you want to make beautiful products?</h2>
+    <h2 className='text-[26px] leading-10 text-white font-[600] mb-5 md:text-[2rem]'>Ready to build something amazing together?</h2>
     <a href='#contact'>
     <button className='bg-primaryColor text-white font-[500]
      flex items-center gap-2 hover:bg-smallTextColor ease-in duration-300 py-2 px-4 rounded-[8px]'>
@@ -17,8 +17,8 @@ const Footer = () => {
     </a>
     </div>
     <div className='w-full sm:w-1/2'>
-    <p className='text-gray-300 leading-7 mt-4 sm:mt-0'>Aikinyi Estate is the best place to find your next perfect place to live.
-    We have a wide range of properties For you to choose from.</p>
+    <p className='text-gray-300 leading-7 mt-4 sm:mt-0'>I'm a passionate software developer ready to bring your ideas to life. 
+    Let's collaborate on innovative projects and create solutions that make a difference.</p>
     <div className='flex items-center gap-4 flex-wrap md:gap-8 mt-10'>
     <span className='text-gray-300 font-[600] text-[15px]'>Follow Me:</span>
 
@@ -61,21 +61,21 @@ const Footer = () => {
      <div className='container'>
      <div className='flex items-center justify-center sm:justify-between'>
 
-     <div className='hidden sm:block'>
-     <div className='flex items-center gap-[10px]'>
-     <span className='w-[35px] h-[35px] rounded-full bg-[#2b2d33] text-white font-[500] text-[18px] flex items-center justify-center'>I</span>
-     
-     <div className='leading-[20px]'>
-     <h2 className='text-gray-200 font-[500] text-[18px]'>Ismail</h2>
-     <p className='text-gray-400 text-[14px] font-[500]'>Personal</p>
-     </div>
-     </div>
-     </div>
+           <div className='hidden sm:block'>
+      <div className='flex items-center gap-[10px]'>
+      <span className='w-[35px] h-[35px] rounded-full bg-[#2b2d33] text-white font-[500] text-[18px] flex items-center justify-center'>I</span>
+      
+      <div className='leading-[20px]'>
+      <h2 className='text-gray-200 font-[500] text-[18px]'>Ismail</h2>
+      <p className='text-gray-400 text-[14px] font-[500]'>Software Developer</p>
+      </div>
+      </div>
+      </div>
 
 
-     <div>
-     <p className='text-gray-400 text-[14px]'>Copyright {year} developed by ismailgrapix - All right reserved.</p>
-     </div>
+      <div>
+      <p className='text-gray-400 text-[14px]'>Copyright {year} developed by Ismail - All rights reserved.</p>
+      </div>
      </div>
      </div>
      </div>

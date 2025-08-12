@@ -24,8 +24,8 @@ const TechStack = () => {
         <div className="text-center">
           <h2 className="text-headingColor font-[800] text-[2.4rem] mb-5">My Tech Stack</h2>
           <p className="lg:max-w-[600px] lg:mx-auto text-headingColor font-[500] text-[16px] leading-7">
-            I specialize in modern web technologies to build responsive, scalable, and performance-optimized
-            applications. Here are the key technologies I work with.
+            I specialize in modern software development technologies to build robust, scalable, and performance-optimized
+            applications. Here are the key technologies and skills I bring to every project.
           </p>
         </div>
 
